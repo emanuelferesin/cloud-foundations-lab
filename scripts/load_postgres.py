@@ -15,8 +15,12 @@ def run_sql(cur, path):
 
 
 def load_csv(cur, table, path, transform=None):
-    with open(path) as f:
-        rows = list(csv.DictReader(f))
+    with open(path, newline="") as f:
+        reader = csv.DictReader(f)
+        rows = [
+            {k.lstrip("\ufeff"): v for k, v in row.items()}  # Normaliza BOM y espacios en encabezados
+            for row in reader
+        ]
     if transform:
         rows = [transform(r) for r in rows]
     if not rows:

@@ -61,3 +61,11 @@ Tradeoff: depende de conectividad y de los free-tier hours disponibles (60 hs/me
 Con Docker local se trabaja offline y sin límite de tiempo.
 
 Resultado: Codespaces para las clases, Docker local como fallback documentado en el README.
+
+### 005 - Clase de prueba
+
+Decision: Test de clase
+Contexto: Test
+Alternativas: Test
+Tradeoff:Test
+Resultado: Test
