@@ -1,0 +1,98 @@
+# Git básico para trabajar con el repo del profesor
+
+## Flujo recomendado
+
+1. Clonar el repositorio:
+   ```bash
+   git clone <url-del-repo>
+   cd <nombre-del-repo>
+   ```
+
+2. Ver los remotos:
+   ```bash
+   git remote -v
+   ```
+
+3. Traer los últimos cambios del remoto:
+   ```bash
+   git fetch
+   ```
+
+4. Ver ramas locales y remotas:
+   ```bash
+   git branch
+   git branch -a
+   ```
+
+5. Cambiar a la rama principal del profesor:
+   ```bash
+   git checkout main
+   # o
+   git switch main
+   ```
+
+6. Actualizar la rama principal:
+   ```bash
+   git pull
+   ```
+
+7. Crear tu propia rama para trabajar:
+   ```bash
+   git checkout -b lab-02-tuapellido
+   # o
+   git switch -c lab-02-tuapellido
+   ```
+
+8. Ver el estado actual:
+   ```bash
+   git status
+   ```
+
+9. Guardar tus cambios en el staging:
+   ```bash
+   git add .
+   ```
+
+10. Hacer un commit:
+    ```bash
+    git commit -m "lab-02: tarea completada"
+    ```
+
+11. Subir tu rama al remoto:
+    ```bash
+    git push -u origin lab-02-tuapellido
+    ```
+
+## Si el profesor agrega cambios nuevos
+
+Antes de seguir trabajando, actualiza tu rama principal y luego mételos a tu rama:
+
+```bash
+git checkout main
+git pull
+git checkout lab-02-tuapellido
+git merge main
+```
+
+## Si necesitas usar una rama nueva del profesor
+
+```bash
+git fetch
+git checkout nombre-de-la-rama
+# o
+git switch nombre-de-la-rama
+```
+
+## Comandos clave
+
+- `git fetch` → trae información nueva del remoto
+- `git pull` → actualiza tu rama local desde el remoto
+- `git checkout` / `git switch` → cambiar de rama
+- `git checkout -b` / `git switch -c` → crear rama nueva
+- `git status` → ver cambios pendientes
+- `git add` + `git commit` → guardar cambios localmente
+- `git push` → subir tu rama al remoto
+
+## Consejo importante
+
+Nunca trabajes directamente en `main` si debes hacer tu propio lab. Crea siempre tu propia rama con tu nombre y haz tus commits ahí.
